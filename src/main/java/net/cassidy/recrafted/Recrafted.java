@@ -46,7 +46,7 @@ public class Recrafted {
         if(event.getTab() == ModCreativeModeTabs.RECRAFTED_TAB) {
             event.accept(ModItems.FORGED_IRON_INGOT);
             event.accept(ModBlocks.FORGED_IRON_BLOCK);
-            event.accept(ModBlocks.GRASS_TURF);
+            event.accept(ModBlocks.PATH_TURF);
         }
     }
 
