@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": {"model": "recrafted:block/sculk_cage_activated"},
+    "lit=false": {"model": "recrafted:block/sculk_cage_deactivated"}
+  }
+}

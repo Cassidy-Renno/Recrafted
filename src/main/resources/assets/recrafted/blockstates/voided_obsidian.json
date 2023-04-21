@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": { "model":  "recrafted:block/voided_obsidian_activated" },
+    "lit=false": { "model":  "recrafted:block/voided_obsidian_deactivated" }
+  }
+}

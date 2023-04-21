@@ -1,0 +1,17 @@
+{
+  "ambientocclusion": false,
+  "render_type": "cutout_mipped",
+  "textures": {
+    "particle": "block/flowering_azalea_side",
+    "flowering_azalea_side": "block/flowering_azalea_side"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 0 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#flowering_azalea_side" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#flowering_azalea_side" }
+      }
+    }
+  ]
+}

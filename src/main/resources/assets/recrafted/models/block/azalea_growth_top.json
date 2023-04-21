@@ -1,0 +1,17 @@
+{
+  "ambientocclusion": false,
+  "render_type": "cutout_mipped",
+  "textures": {
+    "particle": "block/azalea_top",
+    "azalea_top": "block/azalea_top"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0.01 ],
+      "to": [ 16, 16, 0.01 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#azalea_top" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#azalea_top" }
+      }
+    }
+  ]
+}
