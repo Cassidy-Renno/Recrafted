@@ -1,9 +1,7 @@
 package net.cassidy.recrafted.block;
 
-import com.mojang.datafixers.types.templates.Tag;
 import net.cassidy.recrafted.Recrafted;
 import net.cassidy.recrafted.item.ModItems;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -16,13 +14,15 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static net.cassidy.recrafted.item.ModItems.ITEMS;
+
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Recrafted.MOD_ID);
 
     public static final RegistryObject<Block> FORGED_IRON_BLOCK = registerBlock("forged_iron_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(6f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
+                    .strength(5f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
 
     //TURFS
 
@@ -40,7 +40,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> MYCELIUM_TURF = registerBlock("mycelium_turf",
             () -> new MyceliumBlock(BlockBehaviour.Properties.of(Material.DIRT)
                     .strength(0.6f).sound(SoundType.GRASS)));
-
     public static final RegistryObject<Block> CRIMSON_TURF = registerBlock("crimson_turf",
             () -> new CrimsonNyliumTurfBlock(BlockBehaviour.Properties.of(Material.DIRT)
                     .strength(0.6f).sound(SoundType.NYLIUM)));
@@ -48,15 +47,15 @@ public class ModBlocks {
             () -> new WarpedNyliumTurfBlock(BlockBehaviour.Properties.of(Material.DIRT)
                     .strength(0.6f).sound(SoundType.NYLIUM)));
     public static final RegistryObject<Block> FARMLAND_TURF = registerBlock("farmland_turf",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
-                    .strength(0.6f).sound(SoundType.GRASS)));
+            () -> new TurfBlock(BlockBehaviour.Properties.of(Material.DIRT).randomTicks()
+                    .strength(0.5f).sound(SoundType.GRASS)));
     public static final RegistryObject<Block> MOIST_FARMLAND_TURF = registerBlock("moist_farmland_turf",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT)
-                    .strength(0.6f).sound(SoundType.GRASS)));
+            () -> new TurfBlock(BlockBehaviour.Properties.of(Material.DIRT)
+                    .strength(0.5f).sound(SoundType.GRASS)));
 
     public static final RegistryObject<Block> THATCH = registerBlock("thatch",
-            () -> new HayBlock(BlockBehaviour.Properties.of(Material.DIRT)
-                    .strength(0.6f).sound(SoundType.GRASS)));
+            () -> new HayBlock(BlockBehaviour.Properties.of(Material.GRASS)
+                    .strength(0.5f).sound(SoundType.GRASS)));
 
     public static final RegistryObject<Block> AZALEA_GRASS = registerBlock("azalea_grass",
             () -> new AzaleaGrassBlock(BlockBehaviour.Properties.of(Material.DIRT)
@@ -71,51 +70,42 @@ public class ModBlocks {
             () -> new MossBlock(BlockBehaviour.Properties.of(Material.MOSS)
                     .strength(0f).sound(SoundType.AZALEA).instabreak()));
     public static final RegistryObject<Block> CRATE = registerBlock("crate",
-            () -> new BarrelBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(2f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> BOX = registerBlock("box",
-            () -> new BarrelBlock(BlockBehaviour.Properties.of(Material.WOOD)
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(2f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> BLASTED_STONE = registerBlock("blasted_stone",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).sound(SoundType.DEEPSLATE_BRICKS)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_BRICKS)));
     public static final RegistryObject<Block> CAST_IRON = registerBlock("cast_iron",
             () -> new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL)
-                    .strength(3f).sound(SoundType.NETHERITE_BLOCK)));
+                    .strength(5f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
     public static final RegistryObject<Block> DARK_TILES = registerBlock("dark_tiles",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).sound(SoundType.DEEPSLATE_TILES)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES)));
     public static final RegistryObject<Block> ERODED_DEEPSLATE = registerBlock("eroded_deepslate",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).sound(SoundType.DEEPSLATE_TILES)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES)));
 
     //Frosted ice
 
-    public static final RegistryObject<Block> THIN_ICE = registerBlock("thin_ice",
-            () -> new IceBlock(BlockBehaviour.Properties.of(Material.ICE)
-                    .strength(0.5f).sound(SoundType.GLASS).friction(0.98f).noOcclusion()));
-    public static final RegistryObject<Block> CHIPPED_ICE = registerBlock("chipped_ice",
-            () -> new IceBlock(BlockBehaviour.Properties.of(Material.ICE)
-                    .strength(0.5f).sound(SoundType.GLASS).friction(0.98f).noOcclusion()));
-    public static final RegistryObject<Block> CRACKED_ICE = registerBlock("cracked_ice",
-            () -> new IceBlock(BlockBehaviour.Properties.of(Material.ICE)
-                    .strength(0.5f).sound(SoundType.GLASS).friction(0.98f).noOcclusion()));
-    public static final RegistryObject<Block> SHATTERED_ICE = registerBlock("shattered_ice",
-            () -> new IceBlock(BlockBehaviour.Properties.of(Material.ICE)
+    public static final RegistryObject<Block> CRACKING_ICE = registerBlock("cracking_ice",
+            () -> new CrackingIceBlock(BlockBehaviour.Properties.of(Material.ICE)
                     .strength(0.5f).sound(SoundType.GLASS).friction(0.98f).noOcclusion()));
 
     public static final RegistryObject<Block> TOUGH_STONE = registerBlock("tough_stone",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(3f).sound(SoundType.STONE)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> INSET_STONE = registerBlock("inset_stone",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(1.5f).sound(SoundType.STONE)));
+                    .strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> INSCRIBED_STONE = registerBlock("inscribed_stone",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(1.5f).sound(SoundType.LODESTONE)));
+                    .strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.LODESTONE)));
     public static final RegistryObject<Block> SHELF = registerBlock("shelf",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
-                    .strength(1.5f).sound(SoundType.WOOD)));
+                    .strength(2f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> RAW_MUSHROOM = registerBlock("raw_mushroom",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(0.2f).sound(SoundType.WOOD)));
@@ -124,49 +114,78 @@ public class ModBlocks {
                     .strength(2f).sound(SoundType.WOOD)));
     public static final RegistryObject<Block> CENTRIC_BASALT = registerBlock("centric_basalt",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.BASALT)));
+                    .strength(1.25f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
     public static final RegistryObject<Block> COBBLED_BASALT = registerBlock("cobbled_basalt",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.BASALT)));
+                    .strength(1.25f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
     public static final RegistryObject<Block> CENTRIC_QUARTZ = registerBlock("centric_quartz",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.STONE)));
+                    .strength(0.8f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> CENTRIC_PURPUR = registerBlock("centric_purpur",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.STONE)));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> STONE_SUPPORT = registerBlock("stone_support",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.STONE)));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> DEEPSLATE_FRAME = registerBlock("deepslate_frame",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.DEEPSLATE)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final RegistryObject<Block> DEEPSLATE_CORE = registerBlock("deepslate_core",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.DEEPSLATE)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final RegistryObject<Block> VOIDED_OBSIDIAN = registerBlock("voided_obsidian",
             () -> new VoidedObsidianBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(2f).sound(SoundType.STONE)
+                    .strength(50f).requiresCorrectToolForDrops().sound(SoundType.STONE)
                     .lightLevel(state -> state.getValue(SculkCageBlock.LIT) ? 15 : 0)));
     public static final RegistryObject<Block> BASKET = registerBlock("basket",
             () -> new Block(BlockBehaviour.Properties.of(Material.BAMBOO)
-                    .strength(2f).sound(SoundType.SCAFFOLDING).noOcclusion()));
+                    .strength(0f).sound(SoundType.SCAFFOLDING).noOcclusion()));
     public static final RegistryObject<Block> SCULK_CAGE = registerBlock("sculk_cage",
             () -> new SculkCageBlock(BlockBehaviour.Properties.of(Material.SCULK)
-                    .strength(2f).sound(SoundType.SCULK_SHRIEKER)
+                    .strength(0.2f).sound(SoundType.SCULK_SHRIEKER)
                     .lightLevel(state -> state.getValue(SculkCageBlock.LIT) ? 15 : 0)));
     public static final RegistryObject<Block> SCULK_HEART = registerBlock("sculk_heart",
             () -> new Block(BlockBehaviour.Properties.of(Material.SCULK)
-                    .strength(2f).sound(SoundType.SCULK_CATALYST)));
+                    .strength(0.2f).sound(SoundType.SCULK_CATALYST)));
     public static final RegistryObject<Block> AZALEA_GROWTH = registerBlock("azalea_growth",
             () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.GRASS)
-                    .strength(0f).sound(SoundType.GRASS).noOcclusion().noCollission()));
+                    .strength(0f).sound(SoundType.AZALEA).noOcclusion().noCollission()));
     public static final RegistryObject<Block> FLOWERING_AZALEA_GROWTH = registerBlock("flowering_azalea_growth",
             () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.GRASS)
-                    .strength(0f).sound(SoundType.GRASS).noOcclusion().noCollission()));
+                    .strength(0f).sound(SoundType.FLOWERING_AZALEA).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> SPORE_GROWTH = registerBlock("spore_growth",
+            () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.GRASS)
+                    .strength(0f).sound(SoundType.SPORE_BLOSSOM).noOcclusion().noCollission()));
     public static final RegistryObject<Block> GRASS_GROWTH = registerBlock("grass_growth",
             () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.GRASS)
                     .strength(0f).sound(SoundType.GRASS).noOcclusion().noCollission()));
-
+    public static final RegistryObject<Block> OCHRE_FROGLAMP = registerBlock("ochre_froglamp",
+            () -> new Block(BlockBehaviour.Properties.of(Material.FROGLIGHT)
+                    .strength(0f).sound(SoundType.FROGLIGHT)
+                    .lightLevel(value -> 15)));
+    public static final RegistryObject<Block> PEARLESCENT_FROGLAMP = registerBlock("pearlescent_froglamp",
+            () -> new Block(BlockBehaviour.Properties.of(Material.FROGLIGHT)
+                    .strength(0f).sound(SoundType.FROGLIGHT)
+                    .lightLevel(value -> 15)));
+    public static final RegistryObject<Block> VERDANT_FROGLAMP = registerBlock("verdant_froglamp",
+            () -> new Block(BlockBehaviour.Properties.of(Material.FROGLIGHT)
+                    .strength(0f).sound(SoundType.FROGLIGHT)
+                    .lightLevel(value -> 15)));
+    public static final RegistryObject<Block> OILED_WOOD = registerBlock("oiled_wood",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> FRAMED_STONE = registerBlock("framed_stone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_WOOD = registerBlock("polished_wood",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> POLISHED_WOOD_TILES = registerBlock("polished_wood_tiles",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2f).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> POLISHED_STONE = registerBlock("polished_stone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -174,11 +193,8 @@ public class ModBlocks {
         return toReturn;
     }
 
-
-
-
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+        return ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties()));
     }
 

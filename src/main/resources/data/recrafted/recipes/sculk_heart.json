@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "X#X",
+    " X "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sculk"
+    },
+    "X": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "result": {
+    "item": "recrafted:sculk_heart",
+    "count": 8
+  }
+}

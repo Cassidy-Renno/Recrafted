@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class VoidedObsidianBlock extends SculkBlock {
+public class VoidedObsidianBlock extends Block {
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
 
     public VoidedObsidianBlock(Properties properties) {
@@ -28,7 +28,7 @@ public class VoidedObsidianBlock extends SculkBlock {
 
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND && player.getMainHandItem().is(Items.AIR)) {
             level.setBlock(blockPos, state.cycle(LIT), 3);
-            level.playSound((Player)null, blockPos, SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.BLOCKS, 0.3f, 1f);
+            level.playSound((Player)null, blockPos, SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
 

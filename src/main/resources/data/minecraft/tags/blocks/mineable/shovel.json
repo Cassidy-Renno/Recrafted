@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "recrafted:farmland_turf",
+    "recrafted:moist_farmland_turf",
+    "recrafted:azalea_grass",
+    "recrafted:flowering_azalea_grass"
+  ]
+}

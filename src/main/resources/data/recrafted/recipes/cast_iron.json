@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:raw_iron_block"
+  },
+  "result": "recrafted:cast_iron",
+  "experience": 0.7,
+  "cookingtime": 100
+}

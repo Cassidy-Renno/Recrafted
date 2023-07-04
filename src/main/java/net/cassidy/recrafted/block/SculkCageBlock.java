@@ -21,7 +21,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.awt.*;
 
-public class SculkCageBlock extends SculkBlock {
+public class SculkCageBlock extends Block {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
     public SculkCageBlock(Properties properties) {
@@ -34,7 +34,7 @@ public class SculkCageBlock extends SculkBlock {
 
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND && player.getMainHandItem().is(Items.AIR)) {
             level.setBlock(blockPos, state.cycle(LIT), 3);
-            level.playSound((Player)null, blockPos, SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.BLOCKS, 0.3f, 1f);
+            level.playSound((Player)null, blockPos, SoundEvents.SCULK_SHRIEKER_SHRIEK, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
 

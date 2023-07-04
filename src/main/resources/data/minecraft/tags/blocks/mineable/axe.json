@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "recrafted:basket",
+    "recrafted:bolted_planks",
+    "recrafted:box",
+    "recrafted:crate",
+    "recrafted:oiled_wood",
+    "recrafted:polished_wood",
+    "recrafted:polished_wood_tiles",
+    "recrafted:raw_mushroom",
+    "recrafted:shelf"
+  ]
+}

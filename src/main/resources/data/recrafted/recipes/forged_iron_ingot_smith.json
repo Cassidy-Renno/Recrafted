@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:iron_ingot"
+  },
+  "addition": {
+    "item": "minecraft:charcoal"
+  },
+  "result": {
+    "item": "recrafted:forged_iron_ingot"
+  }
+}

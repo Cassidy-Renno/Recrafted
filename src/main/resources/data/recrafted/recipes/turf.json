@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "turf",
+  "pattern": [
+    "XX ",
+    "XX ",
+    "   "
+  ],
+  "key": {
+    "X": {
+      "item": "recrafted:grass_growth"
+    }
+  },
+  "result": {
+    "item": "recrafted:turf",
+    "count": 16
+  }
+}

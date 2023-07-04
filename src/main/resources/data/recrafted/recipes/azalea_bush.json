@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bush",
+  "pattern": [
+    "XX ",
+    "XX ",
+    "   "
+  ],
+  "key": {
+    "X": {
+      "item": "recrafted:azalea_growth"
+    }
+  },
+  "result": {
+    "item": "recrafted:azalea_bush",
+    "count": 16
+  }
+}

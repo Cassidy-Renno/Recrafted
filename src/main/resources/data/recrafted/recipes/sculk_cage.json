@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:sculk"
+    },
+    "#": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "item": "recrafted:sculk_cage",
+    "count": 8
+  }
+}

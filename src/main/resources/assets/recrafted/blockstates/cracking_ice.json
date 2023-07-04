@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "cracking=0": { "model":  "recrafted:block/thin_ice" },
+    "cracking=1": { "model":  "recrafted:block/chipped_ice" },
+    "cracking=2": { "model":  "recrafted:block/cracked_ice" },
+    "cracking=3": { "model":  "recrafted:block/shattered_ice" }
+  }
+}

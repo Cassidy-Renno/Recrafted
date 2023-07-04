@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX ",
+    "XX ",
+    "   "
+  ],
+  "key": {
+    "X": {
+      "item": "recrafted:polished_wood"
+    }
+  },
+  "result": {
+    "item": "recrafted:polished_wood_tiles",
+    "count": 4
+  }
+}

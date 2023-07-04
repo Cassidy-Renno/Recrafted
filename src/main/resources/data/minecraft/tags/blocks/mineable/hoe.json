@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "recrafted:turf",
+    "recrafted:path_turf",
+    "recrafted:mycelium_turf",
+    "recrafted:podzol_turf",
+    "recrafted:crimson_turf",
+    "recrafted:warped_turf",
+    "recrafted:azalea_bush",
+    "recrafted:azalea_growth",
+    "recrafted:flowering_azalea_bush",
+    "recrafted:flowering_azalea_growth",
+    "recrafted:grass_growth",
+    "recrafted:ochre_froglamp",
+    "recrafted:pearlescent_froglamp",
+    "recrafted:sculk_cage",
+    "recrafted:spore_growth",
+    "recrafted:thatch",
+    "recrafted:verdant_froglamp"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "recrafted:blasted_stone",
+    "recrafted:cast_iron",
+    "recrafted:centric_basalt",
+    "recrafted:centric_purpur",
+    "recrafted:centric_quartz",
+    "recrafted:cobbled_basalt",
+    "recrafted:cracking_ice",
+    "recrafted:dark_tiles",
+    "recrafted:deepslate_core",
+    "recrafted:deepslate_frame",
+    "recrafted:eroded_deepslate",
+    "recrafted:forged_iron_block",
+    "recrafted:framed_stone",
+    "recrafted:inscribed_stone",
+    "recrafted:inset_stone",
+    "recrafted:polished_stone",
+    "recrafted:sculk_heart",
+    "recrafted:stone_support",
+    "recrafted:tough_stone",
+    "recrafted:voided_obsidian"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "ambientocclusion": false,
+  "render_type": "cutout_mipped",
+  "textures": {
+    "particle": "block/spore_blossom_base",
+    "spore_blossom_base": "block/spore_blossom_base"
+  },
+  "elements": [
+    {   "from": [ 1, 1, 0.01 ],
+      "to": [ 15, 15, 0.01 ],
+      "faces": {
+        "north": { "uv": [ 1, 1, 15, 15 ], "texture": "#spore_blossom_base" },
+        "south": { "uv": [ 1, 1, 15, 15 ], "texture": "#spore_blossom_base" }
+      }
+    }
+  ]
+}

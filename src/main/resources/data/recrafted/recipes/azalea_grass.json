@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "azalea_grass",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "recrafted:azalea_growth"
+    },
+    {
+      "item": "recrafted:azalea_growth"
+    },
+    {
+      "item": "recrafted:azalea_growth"
+    },
+    {
+      "item": "recrafted:azalea_growth"
+    },
+    {
+      "item": "recrafted:azalea_growth"
+    }
+  ],
+  "result": {
+    "item": "recrafted:azalea_grass",
+    "count": 1
+  }
+}

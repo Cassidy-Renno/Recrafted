@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "X#X",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:glass"
+    },
+    "#": {
+      "item": "minecraft:pearlescent_froglight"
+    }
+  },
+  "result": {
+    "item": "recrafted:pearlescent_froglamp",
+    "count": 4
+  }
+}

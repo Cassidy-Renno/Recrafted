@@ -1,23 +1,11 @@
 package net.cassidy.recrafted;
 
-import com.mojang.datafixers.types.templates.Tag;
 import com.mojang.logging.LogUtils;
 import net.cassidy.recrafted.block.ModBlocks;
 import net.cassidy.recrafted.item.ModCreativeModeTabs;
 import net.cassidy.recrafted.item.ModItems;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.data.tags.VanillaBlockTagsProvider;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -76,10 +64,7 @@ public class Recrafted {
             event.accept(ModBlocks.CAST_IRON);
             event.accept(ModBlocks.DARK_TILES);
             event.accept(ModBlocks.ERODED_DEEPSLATE);
-            event.accept(ModBlocks.THIN_ICE);
-            event.accept(ModBlocks.CHIPPED_ICE);
-            event.accept(ModBlocks.CRACKED_ICE);
-            event.accept(ModBlocks.SHATTERED_ICE);
+            event.accept(ModBlocks.CRACKING_ICE);
             event.accept(ModBlocks.TOUGH_STONE);
             event.accept(ModBlocks.INSET_STONE);
             event.accept(ModBlocks.INSCRIBED_STONE);
@@ -99,11 +84,18 @@ public class Recrafted {
             event.accept(ModBlocks.SCULK_CAGE);
             event.accept(ModBlocks.AZALEA_GROWTH);
             event.accept(ModBlocks.FLOWERING_AZALEA_GROWTH);
+            event.accept(ModBlocks.SPORE_GROWTH);
             event.accept(ModBlocks.GRASS_GROWTH);
+            event.accept(ModBlocks.OCHRE_FROGLAMP);
+            event.accept(ModBlocks.PEARLESCENT_FROGLAMP);
+            event.accept(ModBlocks.VERDANT_FROGLAMP);
+            event.accept(ModBlocks.OILED_WOOD);
+            event.accept(ModBlocks.FRAMED_STONE);
+            event.accept(ModBlocks.POLISHED_WOOD);
+            event.accept(ModBlocks.POLISHED_WOOD_TILES);
+            event.accept(ModBlocks.POLISHED_STONE);
         }
     }
-
-
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -112,7 +104,6 @@ public class Recrafted {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
         }
     }
 }

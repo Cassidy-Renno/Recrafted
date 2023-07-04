@@ -1,0 +1,12 @@
+{
+  "values": [
+    "recrafted:turf",
+    "recrafted:path_turf",
+    "recrafted:mycelium_turf",
+    "recrafted:podzol_turf",
+    "recrafted:farmland_turf",
+    "recrafted:moist_farmland_turf",
+    "recrafted:crimson_turf",
+    "recrafted:warped_turf"
+  ]
+}

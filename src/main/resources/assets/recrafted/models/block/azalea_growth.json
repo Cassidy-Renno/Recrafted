@@ -6,8 +6,8 @@
     "azalea_side": "block/azalea_side"
   },
   "elements": [
-    {   "from": [ 0, 0, 0 ],
-      "to": [ 16, 16, 0 ],
+    {   "from": [ 0, 0, 0.01 ],
+      "to": [ 16, 16, 0.01 ],
       "faces": {
         "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#azalea_side" },
         "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#azalea_side" }
